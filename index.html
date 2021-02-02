@@ -4,66 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=-, initial-scale=1.0">
     <title id="title">Survey Form</title>
+    <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="main" class="main-content">
     <div class="page-container">
         <header class="header">
-            <h1>FreeCodeCamp Survey Form</h1>
-            <p class="form-description"></p>
+            <h1 id="title">FreeCodeCamp Survey Form</h1>
+            <p id="description" class="form-description">Please enter your registration details below.</p>
         </header>
-        <form class="form-container">
+        <form class="form-container" id="survey-form">
             <div class="form-group">
-                <label id="name-label" for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-input" placeholder="Enter your name" required/>
+                <label class="label" id="name-label" for="name">Name</label>
+                <input 
+                type="text" 
+                name="name" 
+                id="name" 
+                class="form-input" 
+                placeholder="Enter your name" 
+                required/>
             </div>
             <div class="form-group">
-                <label id="email-label" for="email">Email</label>
-                <input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" type="text" name="email" id="email" class="form-input" placeholder="Enter your email" required/>
+                <label class="label" id="email-label" for="email">Email</label>
+                <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                class="form-input" 
+                placeholder="Enter your email" 
+                required/>
             </div>
             <div class="form-group">
-                <label id="number-label" for="age">How old are you? </label>
-                <input type="number" name="age" id="number" class="form-input" placeholder="Age" min="16" max="99">
+                <label class="label" id="number-label" for="age">How old are you? </label>
+                <input 
+                type="number" 
+                name="age" 
+                id="number" 
+                class="form-input" 
+                placeholder="Age" 
+                min="16" 
+                max="99">
+            </div>
+            <div class="choose-sex-group">
+                <p class="choose-sex-label" id="label">Choose your sex</p>
+                <input 
+                id="male" 
+                type="radio" 
+                name="radio-buttons" 
+                class="radio-buttons" 
+                value="male"
+                required/>
+                <label for="male" id="whichSex">Male</label>
+                <input 
+                id="female" 
+                type="radio" 
+                name="radio-buttons" 
+                class="radio-buttons" 
+                value="female"
+                required/>
+                <label for="female" id="whichSex">Female</label>
+                <input 
+                id="other" 
+                type="radio" 
+                name="radio-buttons" 
+                class="radio-buttons"
+                value="other" 
+                required/>
+                <label for="other" id="whichSex">Other</label>
             </div>
             <div class="form-group">
-                <label id="dropdown" for="dropdown">What is your current life status? </label>
-                <select name="dropdown" id="dropdown">
-                    <option disabled selected value>Select current role</option>
-                    <option value="student">Student</option>
-                    <option value="working">Full Time Job</option>
-                    <option value="nav">N.A.V</option>
-                    <option value="notSay">Prefer not to say</option>
-                    <option value="other">Other</option>
+                <label id="label" for="dropdown">Current life status? </label>
+                    <select class="form-input" name="dropdown" id="dropdown">
+                        <option disabled selected value>Select current role</option>
+                        <option value="student">Student</option>
+                        <option value="working">Full Time Job</option>
+                        <option value="nav">N.A.V</option>
+                        <option value="notSay">Prefer not to say</option>
+                        <option value="other">Other</option>
+                    </select>
             </div>
             <div class="form-group">
-                <p>Describe yourself with these choices: </p>
+                <p id="label">Describe yourself using these choices: </p>
                 <label>
-                    <input type="checkbox" id="curious" name="curious" class="checkbox-input" value="Curious">
+                    <input 
+                    type="checkbox" 
+                    id="curious" 
+                    name="description" 
+                    class="checkbox-input" 
+                    value="Curious">
                     Curious
                 </label>
                 <label>
-                    <input type="checkbox" id="happy" name="happy" class="checkbox-input" value="happy">
+                    <input 
+                    type="checkbox" 
+                    id="happy" 
+                    name="description" 
+                    class="checkbox-input" 
+                    value="happy">
                     Happy
                 </label>
                 <label>
-                    <input type="checkbox" id="thoughtful" name="thoughtful" class="checkbox-input" value="thoughful">
+                    <input 
+                    type="checkbox" 
+                    id="thoughtful" 
+                    name="description" 
+                    class="checkbox-input" 
+                    value="thoughful">
                     Thoughtful
                 </label>
                 <label>
-                    <input type="checkbox" id="loving" name="loving" class="checkbox-input" value="loving">
+                    <input 
+                    type="checkbox" 
+                    id="loving" 
+                    name="description" 
+                    class="checkbox-input" 
+                    value="loving">
                     Loving
                 </label>
                 <label>
-                    <input type="checkbox" id="sneaky" name="sneaky" class="checkbox-input" value="sneaky">
+                    <input 
+                    type="checkbox" 
+                    id="sneaky" 
+                    name="description" 
+                    class="checkbox-input" 
+                    value="sneaky">
                     Curious
                 </label>
                 <label>
-                    <input type="checkbox" id="curious" name="curious" class="checkbox-input" value="Curious">
-                    Curious
+                    <input 
+                    type="checkbox" 
+                    id="dreamy" 
+                    name="description" 
+                    class="checkbox-input" 
+                    value="Dreamy">
+                    Dreamy
                 </label>
-
+            </div>
+            <div class="form-group">
+                <label id="label">Please enter anything else you feel we should know about: </label>
+                <textarea
+                id="comments"
+                class="input-textarea"
+                name="comment"></textarea>
+            </div>
+            <div class="form-group">
+                <button 
+                type="submit" 
+                id="submit" 
+                class="submit-button">Submit
+            </button>
             </div>
         </form>
     </div>
-    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
